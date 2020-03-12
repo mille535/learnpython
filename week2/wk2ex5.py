@@ -7,8 +7,13 @@ AS number. From the last line use the string .split() method to
 obtain the BGP peer IP address. Print both local AS number and the
 BGP peer IP address to the screen.
 """
+#the following three lines are only needed because of VS Code and working directory
+from pathlib import Path
+data_folder = Path("week2/")
+file_to_open = data_folder / "show_ip_bgp_summ.txt"
+
 #opens file and reads lines into list type variable
-with open("show_ip_bgp_summ.txt") as f:
+with open(file_to_open) as f:
     bgp_lines = f.readlines()
 
 #set asn variable to first line and last field of bgp_lines variable

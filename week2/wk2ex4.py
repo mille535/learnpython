@@ -14,8 +14,13 @@ to 'pip install pycodestyle' on your computer (should be able to type this from
 the shell prompt). Alternatively, you can type:
   'python -m pip install pycodestyle'.
 """
+#the following three lines are only needed because of VS Code and working directory
+from pathlib import Path
+data_folder = Path("week2/")
+file_to_open = data_folder / "show_ip_int_brief.txt"
+
 #opens file with using proper while methed f variable is filename and ip_int is the readlines output to list
-with open("show_ip_int_brief.txt") as f:
+with open(file_to_open) as f:
     ip_int = f.readlines()
 
 #seperating the line for interface fa/4
