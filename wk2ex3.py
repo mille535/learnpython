@@ -40,3 +40,5 @@ three_arp = "\n".join(three_arp)
 #creates a file arp_entries.txt in write mode with variable out_file
 with open("arp_entries.txt", "w") as out_file:
     out_file.write(three_arp) #writes the contents of three_arp variable to out_file 
+
+#after the fact I realized I can reuse the f variable instead of out_file to write the file (same as opening)
