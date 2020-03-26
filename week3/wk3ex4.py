@@ -58,4 +58,4 @@ for i in arp_table:
 
     # Reunite MAC address using a colon 
     new_mac = ":".join(new_mac)
-    #print(new_mac)
+    print(new_mac)
