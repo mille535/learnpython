@@ -40,4 +40,22 @@ arp_table = [
  ('10.220.88.40', '001c.c4bf.826a'),
  ('10.220.88.41', '001b.7873.5634')]
 
- #delete this line
+for i in arp_table:
+    raw_mac = i[1].upper().replace(".","")
+    #this is my one-liner version that negates the rest of the code--not sure how i got it to work and don't fully undertsand it...but i typed it...
+    #print(':'.join([raw_mac[i:i+2] for i in range(0, len(raw_mac), 2)]))
+        # Process two hex digits at a time
+    new_mac = []
+    #iterates through each mac address using a while loop counting by length, we are chopping up the mac into two caracter segments
+    #and when the lenth gets to zero the mac address has been processed and the loop ends
+    while len(raw_mac) > 0:
+        #takes the first two characters in raw_mac and stores them in entry var
+        entry = raw_mac[:2]
+        #removes the first two characters of variable raw_mac as they have been stored in entry var
+        raw_mac = raw_mac[2:]
+        #saves a completed mac address to new_mac list type variable
+        new_mac.append(entry)
+
+    # Reunite MAC address using a colon 
+    new_mac = ":".join(new_mac)
+    #print(new_mac)
